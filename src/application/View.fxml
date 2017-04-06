@@ -1,8 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
-</AnchorPane>
 
+<AnchorPane prefHeight="460.0" prefWidth="320.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <Pane fx:id="start_Pane" layoutY="150.0" prefHeight="460.0" prefWidth="320.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="start_Button" layoutX="83.0" layoutY="184.0" mnemonicParsing="false" onMouseDragOver="#increase_Size" prefHeight="34.0" prefWidth="155.0" style="-fx-background-radius: 20, 20, 20, 20;" text="Start" textAlignment="CENTER">
+               <font>
+                  <Font name="Baskerville Old Face" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="setting_Button" layoutX="266.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#open_Setting" onMouseDragOver="#increase_Size" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 40, 40, 40, 40;" text="S">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="setting_Pane" layoutY="104.0" prefHeight="185.0" prefWidth="320.0" visible="false">
+         <children>
+            <Text layoutX="25.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Volume">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text layoutX="31.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Music">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Slider layoutX="82.0" layoutY="54.0" prefHeight="16.0" prefWidth="155.0" />
+            <Slider layoutX="82.0" layoutY="88.0" prefHeight="16.0" prefWidth="155.0" />
+            <Button layoutX="68.0" layoutY="127.0" mnemonicParsing="false" text="Clear Data" />
+            <Text layoutX="136.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
