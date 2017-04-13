@@ -1,21 +1,27 @@
 package application;
 	
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 
-// Taylor test commit 
 
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			BorderPane root = new BorderPane();
-			Scene scene = new Scene(root,320,460);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			AnchorPane root = (AnchorPane) FXMLLoader.load(Main.class.getResource("/application/View.fxml"));
+			Scene scene = new Scene(root, 800, 600);
 			primaryStage.setScene(scene);
 			primaryStage.show();
+			
+//			BorderPane root = new BorderPane();
+//			Scene scene = new Scene(root,800,600);
+//			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+//			primaryStage.setScene(scene);
+//			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

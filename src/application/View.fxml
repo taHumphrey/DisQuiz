@@ -1,48 +1,195 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="460.0" prefWidth="320.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ViewController">
    <children>
-      <Pane fx:id="start_Pane" layoutY="150.0" prefHeight="460.0" prefWidth="320.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Pane fx:id="startScreen" layoutX="315.0" layoutY="200.0" prefHeight="600.0" prefWidth="800.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Button fx:id="start_Button" layoutX="83.0" layoutY="184.0" mnemonicParsing="false" onMouseDragOver="#increase_Size" prefHeight="34.0" prefWidth="155.0" style="-fx-background-radius: 20, 20, 20, 20;" text="Start" textAlignment="CENTER">
+            <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../../../../Desktop/12-disney-cartoons.preview.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="newUserButton" layoutX="68.0" layoutY="272.0" mnemonicParsing="false" onMouseClicked="#openNewLogin" text="New User">
                <font>
-                  <Font name="Baskerville Old Face" size="18.0" />
+                  <Font size="26.0" />
                </font>
             </Button>
-            <Button fx:id="setting_Button" layoutX="266.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#open_Setting" onMouseDragOver="#increase_Size" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 40, 40, 40, 40;" text="S">
+            <Button fx:id="loginButton" layoutX="66.0" layoutY="196.0" mnemonicParsing="false" onMouseClicked="#openLogin" text="    Login   ">
                <font>
-                  <Font size="15.0" />
+                  <Font size="26.0" />
                </font>
             </Button>
+            <Pane fx:id="createPanel" layoutX="277.0" layoutY="160.0" prefHeight="225.0" prefWidth="246.0" style="-fx-background-color: white; -fx-border-color: #4c4c4c; -fx-border-width: 1.5;" visible="false">
+               <children>
+                  <TextField fx:id="createField" layoutX="23.0" layoutY="94.0" promptText="Create New User">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="createSubmit" layoutX="155.0" layoutY="142.0" mnemonicParsing="false" onMouseClicked="#categoryOpen" text="Submit">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Text layoutX="64.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create User">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="createExitButton" layoutX="220.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#createExit" prefHeight="25.0" prefWidth="11.0" text="X" />
+               </children>
+            </Pane>
+            <Pane fx:id="loginPanel" layoutX="277.0" layoutY="160.0" prefHeight="225.0" prefWidth="246.0" style="-fx-background-color: white; -fx-border-color: #4c4c4c; -fx-border-width: 1.5;" visible="false">
+               <children>
+                  <TextField fx:id="loginField" layoutX="23.0" layoutY="94.0" promptText="Existing Username">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </TextField>
+                  <Button layoutX="155.0" layoutY="142.0" mnemonicParsing="false" onMouseClicked="#categoryOpen" text="Submit">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Text layoutX="46.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome Back!">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="loginExitButton" layoutX="220.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#loginExit" prefHeight="25.0" prefWidth="11.0" text="X" />
+               </children>
+            </Pane>
          </children>
       </Pane>
-      <Pane fx:id="setting_Pane" layoutY="104.0" prefHeight="185.0" prefWidth="320.0" visible="false">
+      <Pane fx:id="categoryPanel" layoutX="300.0" layoutY="200.0" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Text layoutX="25.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Volume">
+            <ImageView fitHeight="600.0" fitWidth="806.0" layoutX="-3.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../../../../Desktop/df27f8be0d80fd3374dc52514774f9a3.jpg" />
+               </image>
+            </ImageView>
+            <Pane fx:id="categoryPanel" layoutX="140.0" layoutY="121.0" prefHeight="359.0" prefWidth="521.0" style="-fx-background-color: white; -fx-border-color: #4c4c4c; -fx-border-width: .5px;">
+               <children>
+                  <Pane layoutX="6.0" layoutY="10.0" prefHeight="58.0" prefWidth="509.0" style="-fx-border-color: #4c4c4c; -fx-border-width: .2;" />
+                  <Pane layoutX="6.0" layoutY="80.0" prefHeight="58.0" prefWidth="509.0" style="-fx-border-color: #4c4c4c; -fx-border-width: .2;" />
+                  <Pane layoutX="6.0" layoutY="150.0" prefHeight="58.0" prefWidth="509.0" style="-fx-border-color: #4c4c4c; -fx-border-width: .2;" />
+                  <Pane layoutX="6.0" layoutY="220.0" prefHeight="58.0" prefWidth="509.0" style="-fx-border-color: #4c4c4c; -fx-border-width: .2;" />
+                  <Pane layoutX="6.0" layoutY="290.0" prefHeight="58.0" prefWidth="509.0" style="-fx-border-color: #4c4c4c; -fx-border-width: .2;" />
+                  <Text layoutX="26.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Star Wars">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="187.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Questions: 20">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="347.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Completion:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="42.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Marvel">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="187.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Questions: 12">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="347.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Completion:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="19.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Characters">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="187.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Questions: 3">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="347.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Completion:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="46.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Songs">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="187.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Questions: 3">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="347.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Completion:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="19.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Princesses">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="187.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Questions: 3">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="347.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Completion:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="categrory1" layoutX="6.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#openCategory1" opacity="0.0" prefHeight="57.0" prefWidth="509.0">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="category2" layoutX="6.0" layoutY="80.0" mnemonicParsing="false" onMouseClicked="#openCategory2" opacity="0.0" text="                                                                ">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="category3" layoutX="6.0" layoutY="150.0" mnemonicParsing="false" onMouseClicked="#openCategory3" opacity="0.0" text="                                                                ">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="category4" layoutX="6.0" layoutY="220.0" mnemonicParsing="false" onMouseClicked="#openCategory4" opacity="0.0" text="                                                                ">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="category5" layoutX="6.0" layoutY="290.0" mnemonicParsing="false" onMouseClicked="#openCategory5" opacity="0.0" text="                                                                ">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Button fx:id="settingButton" layoutX="705.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#openSetting" text="Setting">
                <font>
-                  <Font size="15.0" />
+                  <Font size="18.0" />
                </font>
-            </Text>
-            <Text layoutX="31.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Music">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Text>
-            <Slider layoutX="82.0" layoutY="54.0" prefHeight="16.0" prefWidth="155.0" />
-            <Slider layoutX="82.0" layoutY="88.0" prefHeight="16.0" prefWidth="155.0" />
-            <Button layoutX="68.0" layoutY="127.0" mnemonicParsing="false" text="Clear Data" />
-            <Text layoutX="136.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Text>
+            </Button>
          </children>
       </Pane>
    </children>
