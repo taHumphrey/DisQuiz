@@ -19,13 +19,15 @@ public class ViewController {
 	@FXML
 	Button newUserButton;
 	@FXML
-	Pane categoryPanel;
+	Pane categoryPane;
 	@FXML
 	Pane startScreen;
 	@FXML
 	TextField createField;
 	@FXML
 	TextField loginField;
+	@FXML
+	Button settingButton;
 	@FXML
 	Button category1;
 	@FXML
@@ -61,8 +63,9 @@ public class ViewController {
 	}
 	
 	public void categoryOpen(){
-		categoryPanel.setVisible(true);
+		categoryPane.setVisible(true);
 		startScreen.setVisible(false);
+
 		
 		if(loginPanel.isVisible()){
 			currentUser = loginField.getText();
@@ -70,6 +73,10 @@ public class ViewController {
 		else if(createPanel.isVisible()){
 			currentUser = createField.getText();
 		}
+	}
+	
+	public void openSetting(){
+		
 	}
 	
 	public void openCategory1(){
