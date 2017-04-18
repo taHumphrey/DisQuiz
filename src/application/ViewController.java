@@ -1,33 +1,68 @@
 package application;
 
+import java.io.File;
+import java.util.ArrayList;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
-import javafx.scene.shape.Circle;
+import javafx.scene.text.Text;
 
 public class ViewController {
 	
 	String currentUser = "";
+	ArrayList<String> userData = new ArrayList<>();
 	
+	
+	@FXML
+	Pane startScreen;
 	@FXML
 	Pane loginPanel;
 	@FXML
 	Pane createPanel;
 	@FXML
+	Button loginButton;
+	@FXML
+	Button newUserButton;	
+	@FXML
 	Button loginExitButton;
 	@FXML
-	Button newUserButton;
+	Button createExitButton;
 	@FXML
-	Pane categoryPane;
+	Button createSubmit;
 	@FXML
-	Pane startScreen;
+	Button loginSubmit;
 	@FXML
 	TextField createField;
 	@FXML
 	TextField loginField;
+
+
 	@FXML
-	Button settingButton;
+	Pane categoryScreen;
+	@FXML
+	Pane categoryPanel;
+	@FXML
+	Button settingButton;	
+	@FXML
+	Pane settingPanel;
+	@FXML
+	Button settingExitButton;
+	@FXML
+	Text helloUserText;
+	@FXML
+	Button resetDataButton;
+	@FXML
+	Button logoutButton;
+	
+	@FXML
+	Pane darkTransparent;
+	@FXML
+	Text errorMessage;
+	@FXML
+	Pane errorPanel;
+	
 	@FXML
 	Button category1;
 	@FXML
@@ -43,8 +78,8 @@ public class ViewController {
 	@FXML
 	Button category7;
 	
-	
-			
+
+
 	public void openLogin(){
 		loginPanel.setVisible(true);
 		createPanel.setVisible(false);
@@ -63,21 +98,89 @@ public class ViewController {
 	}
 	
 	public void categoryOpen(){
-		categoryPane.setVisible(true);
-		startScreen.setVisible(false);
 
-		
 		if(loginPanel.isVisible()){
 			currentUser = loginField.getText();
+			loginField.setText("");
+			
+			if(checkFile(currentUser)){
+				categoryScreen.setVisible(true);
+				startScreen.setVisible(false);
+				loginPanel.setVisible(false);
+				createPanel.setVisible(false);
+			}
+			else{
+				showErrorMessage("User was not found. Please enter a new user name.");
+			}
+			
 		}
 		else if(createPanel.isVisible()){
 			currentUser = createField.getText();
+			createField.setText("");
+			
+			if(checkFile(currentUser)){
+				showErrorMessage("User is already created. Please enter a new user name.");
+			}
+			else{
+				categoryScreen.setVisible(true);
+				startScreen.setVisible(false);
+				loginPanel.setVisible(false);
+				createPanel.setVisible(false);
+			}
 		}
+				
 	}
 	
 	public void openSetting(){
+		categoryPanel.setVisible(false);
+		settingPanel.setVisible(true);
+		helloUserText.setText("Hello " + currentUser + "!");
+	}
+	
+	public void settingExit(){
+		categoryPanel.setVisible(true);
+		settingPanel.setVisible(false);
+	}
+	
+	public void resetData(){
 		
 	}
+	
+	public void logOut(){
+		currentUser = "";
+		settingPanel.setVisible(false);
+		categoryPanel.setVisible(true);
+		categoryScreen.setVisible(false);
+		startScreen.setVisible(true);
+		
+	}
+	
+	public void exitErrorMessage(){
+		darkTransparent.setVisible(false);
+		errorPanel.setVisible(false);
+	}
+	
+	public void showErrorMessage(String newErrorMessage){
+		darkTransparent.setVisible(true);
+		errorPanel.setVisible(true);
+		errorMessage.setText(newErrorMessage);
+	}
+	
+	
+	
+	
+	public boolean checkFile(String userName){
+		File f = new File(userName.toLowerCase());
+		if(f.exists() && !f.isDirectory()) { 
+		    return true;
+		}
+		else{
+			return false;
+		}
+	}
+	
+	
+	
 	
 	public void openCategory1(){
 		System.out.println(currentUser);
