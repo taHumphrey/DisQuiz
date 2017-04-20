@@ -77,8 +77,6 @@ public class ViewController {
 	Button category6;
 	@FXML
 	Button category7;
-	
-
 
 	public void openLogin(){
 		loginPanel.setVisible(true);
