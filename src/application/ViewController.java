@@ -2,6 +2,7 @@ package application;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -14,7 +15,7 @@ public class ViewController {
 	
 	String currentUser = "";
 	ArrayList<String> userData = new ArrayList<>();
-	QuestionParsing qParse;
+	QuestionController questControl;
 	
 	@FXML
 	Pane startScreen;
@@ -203,24 +204,22 @@ public class ViewController {
 		categoryPanel.setVisible(false);
 		categoryScreen.setVisible(false);
 		QAPane.setVisible(true);
-		
-		qParse = new QuestionParsing("StarWars");
+		questControl = new QuestionController("StarWars");
 	}
 	@FXML
 	public void openMarvel(){
-		qParse = new QuestionParsing("Marvel");
-		
+		questControl = new QuestionController("Marvel");
 	}
 	@FXML
 	public void openParks(){
-		qParse = new QuestionParsing("Parks");
+		questControl = new QuestionController("Parks");
 	}
 	@FXML
 	public void openSongs(){
-		qParse = new QuestionParsing("Songs");
+		questControl = new QuestionController("Songs");
 	}
 	@FXML
 	public void openMovies(){
-		qParse = new QuestionParsing("Movies");
+		questControl = new QuestionController("Movies");
 	}
 }
