@@ -13,7 +13,7 @@ public class ViewController {
 	
 	String currentUser = "";
 	ArrayList<String> userData = new ArrayList<>();
-	QuestionParsing qParse = new QuestionParsing();
+	QuestionParsing qParse;
 	
 	@FXML
 	Pane startScreen;
@@ -183,6 +183,7 @@ public class ViewController {
 	@FXML
 	public void openStarWars(){
 		System.out.println(currentUser);
+		qParse = new QuestionParsing("StarWars");
 	}
 	@FXML
 	public void openMarvel(){
