@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 
@@ -73,10 +74,26 @@ public class ViewController {
 	Button Songs;
 	@FXML
 	Button Movies;
+	
 	@FXML
-	Button category6;
+	Pane QAPane;
 	@FXML
-	Button category7;
+	Text QAQuestion;
+	@FXML
+	TextField QAAnswerField;
+	@FXML
+	Text QAScore;
+	@FXML
+	ImageView StarWarsQA;
+	@FXML
+	ImageView marvelQA;
+	@FXML
+	ImageView moviesQA;
+	@FXML
+	ImageView parksQA;
+	@FXML
+	ImageView songsQA;
+	
 
 	public void openLogin(){
 		loginPanel.setVisible(true);
@@ -184,6 +201,8 @@ public class ViewController {
 	public void openStarWars(){
 		System.out.println(currentUser);
 		categoryPanel.setVisible(false);
+		categoryScreen.setVisible(false);
+		QAPane.setVisible(true);
 		
 		qParse = new QuestionParsing("StarWars");
 	}

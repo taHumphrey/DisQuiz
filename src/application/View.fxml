@@ -14,7 +14,7 @@
          <children>
             <ImageView fitHeight="600.0" fitWidth="806.0" layoutX="-3.0" pickOnBounds="true">
                <image>
-                  <Image url="@../../df27f8be0d80fd3374dc52514774f9a3.jpg" />
+                  <Image url="@../../CategoryPicture.jpg" />
                </image>
             </ImageView>
             <Pane fx:id="categoryPanel" layoutX="140.0" layoutY="121.0" prefHeight="359.0" prefWidth="521.0" style="-fx-background-color: white; -fx-border-color: #4c4c4c; -fx-border-width: .5px;">
@@ -157,7 +157,7 @@
          <children>
             <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true">
                <image>
-                  <Image url="@../../12-disney-cartoons.png" />
+                  <Image url="@../../StartPicture.png" />
                </image>
             </ImageView>
             <Button fx:id="newUserButton" layoutX="68.0" layoutY="272.0" mnemonicParsing="false" onMouseClicked="#openNewLogin" text="New User">
@@ -223,44 +223,44 @@
             <Button layoutX="104.0" layoutY="105.0" mnemonicParsing="false" onMouseClicked="#exitErrorMessage" text="   OK   " />
          </children>
       </Pane>
-      <Pane fx:id="QAPane" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Pane fx:id="QAPane" prefHeight="600.0" prefWidth="800.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <ImageView fx:id="starWarsQA" fitHeight="600.0" fitWidth="800.0" pickOnBounds="true">
                <image>
-                  <Image url="@../../Animation-Style_4.jpg" />
+                  <Image url="@../../StarWarsPicture.jpg" />
                </image>
             </ImageView>
             <ImageView fx:id="marvelQA" fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" visible="false">
                <image>
-                  <Image url="@../../fID3YiP.jpg" />
+                  <Image url="@../../MarvelPicture.jpg" />
                </image>
             </ImageView>
             <ImageView fx:id="moviesQA" fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" visible="false">
                <image>
-                  <Image url="@../../office_disneystore_pattern.jpg" />
+                  <Image url="@../../MoviePicture.jpg" />
                </image>
             </ImageView>
             <ImageView fx:id="parksQA" fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" visible="false">
                <image>
-                  <Image url="@../../1024x768DisneyJr-Pattern-wallpaper.jpg" />
+                  <Image url="@../../ParkPicture.jpg" />
                </image>
             </ImageView>
             <ImageView fx:id="songsQA" fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" visible="false">
                <image>
-                  <Image url="@../../art-1622424_960_720.jpg" />
+                  <Image url="@../../MusicPicture.jpg" />
                </image>
             </ImageView>
-            <TextField fx:id="QATitle" alignment="CENTER" editable="false" layoutX="14.0" layoutY="14.0" prefHeight="43.0" prefWidth="772.0" text="DISQUIZ: Star Wars">
-               <font>
-                  <Font size="28.0" />
-               </font>
-            </TextField>
-            <TextField fx:id="QAQuestion" alignment="CENTER" editable="false" layoutX="15.0" layoutY="160.0" prefHeight="134.0" prefWidth="772.0">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </TextField>
-            <TextField alignment="CENTER" layoutX="181.0" layoutY="372.0" prefHeight="51.0" prefWidth="440.0">
+            <Pane layoutX="15.0" layoutY="14.0" prefHeight="60.0" prefWidth="772.0" style="-fx-background-color: white;" />
+            <Pane layoutX="669.0" layoutY="87.0" prefHeight="58.0" prefWidth="117.0" style="-fx-background-color: white;" />
+            <Pane layoutX="12.0" layoutY="160.0" prefHeight="134.0" prefWidth="772.0" style="-fx-background-color: white;">
+               <children>
+                  <Text fx:id="QAQuestion" layoutX="5.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ssd" textAlignment="CENTER" wrappingWidth="765.0">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+               </children></Pane>
+            <TextField fx:id="QAAnswerField" alignment="CENTER" layoutX="181.0" layoutY="372.0" prefHeight="51.0" prefWidth="440.0">
                <font>
                   <Font size="19.0" />
                </font>
@@ -271,11 +271,16 @@
                   <Font size="20.0" />
                </font>
             </Button>
-            <TextField fx:id="QAScore" editable="false" layoutX="669.0" layoutY="87.0" prefHeight="58.0" prefWidth="117.0" text="Score:">
+            <Text fx:id="QATitle" layoutX="15.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DISQUIZ: Star Wars" textAlignment="CENTER" wrappingWidth="772.0">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Text>
+            <Text fx:id="QAScore" layoutX="670.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="  Score:" wrappingWidth="117.0">
                <font>
                   <Font size="17.0" />
                </font>
-            </TextField>
+            </Text>
          </children>
       </Pane>
    </children>
