@@ -64,15 +64,15 @@ public class ViewController {
 	Pane errorPanel;
 	
 	@FXML
-	Button category1;
+	Button StarWars;
 	@FXML
-	Button category2;
+	Button Marvel;
 	@FXML
-	Button category3;
+	Button Parks;
 	@FXML
-	Button category4;
+	Button Songs;
 	@FXML
-	Button category5;
+	Button Movies;
 	@FXML
 	Button category6;
 	@FXML
@@ -180,24 +180,31 @@ public class ViewController {
 	
 	
 	
-	public void openCategory1(){
+	@FXML
+	public void openStarWars(){
 		System.out.println(currentUser);
 	}
-	public void openCategory2(){
+	@FXML
+	public void openMarvel(){
 		
 	}
-	public void openCategory3(){
+	@FXML
+	public void openParks(){
 		
 	}
-	public void openCategory4(){
+	@FXML
+	public void openSongs(){
 		
 	}
-	public void openCategory5(){
+	@FXML
+	public void openMovies(){
 		
 	}
+	@FXML
 	public void openCategory6(){
 		
 	}
+	@FXML
 	public void openCategory7(){
 		
 	}

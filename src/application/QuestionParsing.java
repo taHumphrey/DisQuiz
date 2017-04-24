@@ -15,8 +15,8 @@ public class QuestionParsing {
 	String one;
 	String two;
 	int x = 1;
-	public QuestionParsing(){
-		loadFile();
+	public QuestionParsing(String choice){
+		loadFile(choice);
 	}
 	
 	public void parseFile(String line, int n){
@@ -26,16 +26,15 @@ public class QuestionParsing {
 		else{
 			two = line;
 			qaMap.put(x, new ArrayList<String>(Arrays.asList(one, two)));
-			System.out.println(qaMap.get(x).get(1));
+			System.out.println(qaMap.get(x));
 			x+=1;
 		}
 		
 	}
 	
-	public void loadFile(){
+	public void loadFile(String choice){
 		try {
-
-			fr = new FileReader("Star Wars.txt");
+			fr = new FileReader(choice + ".txt");
 			br = new BufferedReader(fr);
 
 			String sCurrentLine;
