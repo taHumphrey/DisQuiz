@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ViewController">
    <children>
-      <Pane fx:id="categoryScreen" layoutX="300.0" layoutY="200.0" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Pane fx:id="categoryScreen" layoutX="300.0" layoutY="200.0" prefHeight="600.0" prefWidth="800.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <ImageView fitHeight="600.0" fitWidth="806.0" layoutX="-3.0" pickOnBounds="true">
                <image>
@@ -24,7 +24,7 @@
                   <Pane layoutX="6.0" layoutY="150.0" prefHeight="58.0" prefWidth="509.0" style="-fx-border-color: #4c4c4c; -fx-border-width: .2;" />
                   <Pane layoutX="6.0" layoutY="220.0" prefHeight="58.0" prefWidth="509.0" style="-fx-border-color: #4c4c4c; -fx-border-width: .2;" />
                   <Pane layoutX="6.0" layoutY="290.0" prefHeight="58.0" prefWidth="509.0" style="-fx-border-color: #4c4c4c; -fx-border-width: .2;" />
-                  <Button fx:id="categrory1" layoutX="6.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#openCategory1" opacity="0.5" prefHeight="57.0" prefWidth="509.0">
+                  <Button fx:id="StarWars" layoutX="6.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#openStarWars" opacity="0.5" prefHeight="57.0" prefWidth="509.0">
                      <font>
                         <Font size="27.0" />
                      </font>
@@ -44,7 +44,7 @@
                         <Font size="15.0" />
                      </font>
                   </Text>
-                  <Button fx:id="category2" layoutX="6.0" layoutY="80.0" mnemonicParsing="false" onMouseClicked="#openCategory2" opacity="0.5" text="                                                                ">
+                  <Button fx:id="Marvel" layoutX="6.0" layoutY="80.0" mnemonicParsing="false" onMouseClicked="#openMarvel" opacity="0.5" text="                                                                ">
                      <font>
                         <Font size="27.0" />
                      </font>
@@ -64,7 +64,7 @@
                         <Font size="15.0" />
                      </font>
                   </Text>
-                  <Button fx:id="category3" layoutX="6.0" layoutY="150.0" mnemonicParsing="false" onMouseClicked="#openCategory3" opacity="0.5" text="                                                                ">
+                  <Button fx:id="Parks" layoutX="6.0" layoutY="150.0" mnemonicParsing="false" onMouseClicked="#openParks" opacity="0.5" text="                                                                ">
                      <font>
                         <Font size="27.0" />
                      </font>
@@ -84,7 +84,7 @@
                         <Font size="15.0" />
                      </font>
                   </Text>
-                  <Button fx:id="category4" layoutX="6.0" layoutY="220.0" mnemonicParsing="false" onMouseClicked="#openCategory4" opacity="0.5" text="                                                                ">
+                  <Button fx:id="Songs" layoutX="6.0" layoutY="220.0" mnemonicParsing="false" onMouseClicked="#openSongs" opacity="0.5" text="                                                                ">
                      <font>
                         <Font size="27.0" />
                      </font>
@@ -104,7 +104,7 @@
                         <Font size="15.0" />
                      </font>
                   </Text>
-                  <Button fx:id="category5" layoutX="6.0" layoutY="290.0" mnemonicParsing="false" onMouseClicked="#openCategory5" opacity="0.5" text="                                                                ">
+                  <Button fx:id="Movies" layoutX="6.0" layoutY="290.0" mnemonicParsing="false" onMouseClicked="#openMovies" opacity="0.5" text="                                                                ">
                      <font>
                         <Font size="27.0" />
                      </font>
@@ -153,7 +153,7 @@
             </Pane>
          </children>
       </Pane>
-      <Pane fx:id="startScreen" layoutX="315.0" layoutY="200.0" prefHeight="600.0" prefWidth="800.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Pane fx:id="startScreen" layoutX="315.0" layoutY="200.0" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true">
                <image>
