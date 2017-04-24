@@ -69,5 +69,9 @@ public class QuestionParsing {
 
 		}
 	}
+	
+	public HashMap<Integer, ArrayList<String>> getQuestion(){
+		return qaMap;
+	}
 }
 

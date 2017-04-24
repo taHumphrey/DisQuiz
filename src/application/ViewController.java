@@ -183,30 +183,25 @@ public class ViewController {
 	@FXML
 	public void openStarWars(){
 		System.out.println(currentUser);
+		categoryPanel.setVisible(false);
+		
 		qParse = new QuestionParsing("StarWars");
 	}
 	@FXML
 	public void openMarvel(){
+		qParse = new QuestionParsing("Marvel");
 		
 	}
 	@FXML
 	public void openParks(){
-		
+		qParse = new QuestionParsing("Parks");
 	}
 	@FXML
 	public void openSongs(){
-		
+		qParse = new QuestionParsing("Songs");
 	}
 	@FXML
 	public void openMovies(){
-		
-	}
-	@FXML
-	public void openCategory6(){
-		
-	}
-	@FXML
-	public void openCategory7(){
-		
+		qParse = new QuestionParsing("Movies");
 	}
 }
