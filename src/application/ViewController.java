@@ -13,7 +13,7 @@ public class ViewController {
 	
 	String currentUser = "";
 	ArrayList<String> userData = new ArrayList<>();
-	
+	QuestionParsing qParse;
 	
 	@FXML
 	Pane startScreen;
@@ -64,15 +64,15 @@ public class ViewController {
 	Pane errorPanel;
 	
 	@FXML
-	Button category1;
+	Button StarWars;
 	@FXML
-	Button category2;
+	Button Marvel;
 	@FXML
-	Button category3;
+	Button Parks;
 	@FXML
-	Button category4;
+	Button Songs;
 	@FXML
-	Button category5;
+	Button Movies;
 	@FXML
 	Button category6;
 	@FXML
@@ -180,25 +180,28 @@ public class ViewController {
 	
 	
 	
-	public void openCategory1(){
+	@FXML
+	public void openStarWars(){
 		System.out.println(currentUser);
+		categoryPanel.setVisible(false);
+		
+		qParse = new QuestionParsing("StarWars");
 	}
-	public void openCategory2(){
+	@FXML
+	public void openMarvel(){
+		qParse = new QuestionParsing("Marvel");
 		
 	}
-	public void openCategory3(){
-		
+	@FXML
+	public void openParks(){
+		qParse = new QuestionParsing("Parks");
 	}
-	public void openCategory4(){
-		
+	@FXML
+	public void openSongs(){
+		qParse = new QuestionParsing("Songs");
 	}
-	public void openCategory5(){
-		
-	}
-	public void openCategory6(){
-		
-	}
-	public void openCategory7(){
-		
+	@FXML
+	public void openMovies(){
+		qParse = new QuestionParsing("Movies");
 	}
 }
