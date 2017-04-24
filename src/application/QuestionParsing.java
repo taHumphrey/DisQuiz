@@ -15,6 +15,10 @@ public class QuestionParsing {
 	String one;
 	String two;
 	int x = 1;
+	
+	public QuestionParsing(){
+		
+	}
 	public QuestionParsing(String choice){
 		loadFile(choice);
 	}

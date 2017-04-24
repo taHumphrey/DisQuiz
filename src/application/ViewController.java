@@ -13,7 +13,7 @@ public class ViewController {
 	
 	String currentUser = "";
 	ArrayList<String> userData = new ArrayList<>();
-	
+	QuestionParsing qParse = new QuestionParsing();
 	
 	@FXML
 	Pane startScreen;
