@@ -124,6 +124,11 @@
                         <Font size="15.0" />
                      </font>
                   </Text>
+                  <Text fx:id="starwarsScore" layoutX="441.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0/10" />
+                  <Text fx:id="marvelScore" layoutX="441.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0/10" />
+                  <Text fx:id="parksScore" layoutX="441.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0/10" />
+                  <Text fx:id="songsScore" layoutX="441.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0/10" />
+                  <Text fx:id="moviesScore" layoutX="441.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0/10" />
                </children>
             </Pane>
             <Button fx:id="settingButton" layoutX="719.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#openSetting" text="Setting">
@@ -134,12 +139,12 @@
             <Pane fx:id="settingPanel" layoutX="256.0" layoutY="167.0" prefHeight="134.0" prefWidth="289.0" style="-fx-background-color: white; -fx-border-color: #4c4c4c; -fx-border-width: .5;" visible="false">
                <children>
                   <Button fx:id="settingExitButton" layoutX="260.0" layoutY="6.0" mnemonicParsing="false" onMouseClicked="#settingExit" prefHeight="25.0" prefWidth="11.0" text="X" />
-                  <Button fx:id="resetDataButton" layoutX="38.0" layoutY="80.0" mnemonicParsing="false" onMouseClicked="#resetData" text="Reset Data">
+                  <Button fx:id="resetDataButton" layoutX="14.0" layoutY="80.0" mnemonicParsing="false" onMouseClicked="#resetData" text="Reset Data">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </Button>
-                  <Button fx:id="logoutButton" layoutX="172.0" layoutY="80.0" mnemonicParsing="false" onMouseClicked="#logOut" text="  Logout  ">
+                  <Button fx:id="logoutButton" layoutX="195.0" layoutY="80.0" mnemonicParsing="false" onMouseClicked="#logOut" text="  Logout  ">
                      <font>
                         <Font size="13.0" />
                      </font>
@@ -149,11 +154,21 @@
                         <Font size="15.0" />
                      </font>
                   </Text>
+                  <Button fx:id="saveButton" layoutX="107.0" layoutY="80.0" mnemonicParsing="false" onMouseClicked="#saveData" text="Save Data">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Button>
+                  <Text layoutX="105.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Text>
                </children>
             </Pane>
          </children>
       </Pane>
-      <Pane fx:id="startScreen" layoutX="315.0" layoutY="200.0" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Pane fx:id="startScreen" layoutX="315.0" layoutY="200.0" prefHeight="600.0" prefWidth="800.0" scaleShape="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true">
                <image>
@@ -254,7 +269,7 @@
             <Pane layoutX="669.0" layoutY="87.0" prefHeight="58.0" prefWidth="117.0" style="-fx-background-color: white;" />
             <Pane layoutX="12.0" layoutY="160.0" prefHeight="134.0" prefWidth="772.0" style="-fx-background-color: white;">
                <children>
-                  <Text fx:id="QAQuestion" layoutX="5.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ssd" textAlignment="CENTER" wrappingWidth="765.0">
+                  <Text fx:id="QAQuestion" layoutX="5.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Starting" textAlignment="CENTER" wrappingWidth="765.0">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -266,7 +281,7 @@
                </font>
             </TextField>
             <TextField fx:id="QAanswerHere" alignment="CENTER" editable="false" layoutX="261.0" layoutY="331.0" prefHeight="27.0" prefWidth="279.0" text="Fill in your answer below then click Submit" />
-            <Button layoutX="353.0" layoutY="461.0" mnemonicParsing="false" text="Submit">
+            <Button fx:id="submitButton" layoutX="353.0" layoutY="461.0" mnemonicParsing="false" onMouseClicked="#submitAnswer" text="Submit">
                <font>
                   <Font size="20.0" />
                </font>
@@ -281,6 +296,11 @@
                   <Font size="17.0" />
                </font>
             </Text>
+            <Button fx:id="doneButton" layoutX="360.0" layoutY="461.0" mnemonicParsing="false" onMouseClicked="#quizDone" text="Done" visible="false">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
    </children>

@@ -1,6 +1,7 @@
 package application;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -27,7 +28,6 @@ public class QuestionParsing {
 		else{
 			two = line;
 			qaMap.put(x, new ArrayList<String>(Arrays.asList(one, two)));
-			System.out.println(qaMap.get(x));
 			x+=1;
 		}
 		
@@ -35,12 +35,10 @@ public class QuestionParsing {
 	
 	public void loadFile(String choice){
 		try {
-			fr = new FileReader(choice + ".txt");
+			fr = new FileReader(new File("questions/" + choice + ".txt").getAbsolutePath());
 			br = new BufferedReader(fr);
 
 			String sCurrentLine;
-
-			br = new BufferedReader(fr);
 			
 			int n = 0;
 			while ((sCurrentLine = br.readLine()) != null) {
