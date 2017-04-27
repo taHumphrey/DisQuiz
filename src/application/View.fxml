@@ -14,7 +14,7 @@
          <children>
             <ImageView fitHeight="600.0" fitWidth="806.0" layoutX="-3.0" pickOnBounds="true">
                <image>
-                  <Image url="@../../CategoryPicture.jpg" />
+                  <Image url="@../../Pictures/CategoryPicture.jpg" />
                </image>
             </ImageView>
             <Pane fx:id="categoryPanel" layoutX="140.0" layoutY="121.0" prefHeight="359.0" prefWidth="521.0" style="-fx-background-color: white; -fx-border-color: #4c4c4c; -fx-border-width: .5px;">
@@ -172,7 +172,7 @@
          <children>
             <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true">
                <image>
-                  <Image url="@../../StartPicture.png" />
+                  <Image url="@../../Pictures/StartPicture.png" />
                </image>
             </ImageView>
             <Button fx:id="newUserButton" layoutX="68.0" layoutY="272.0" mnemonicParsing="false" onMouseClicked="#openNewLogin" text="New User">
@@ -242,27 +242,27 @@
          <children>
             <ImageView fx:id="starWarsQA" fitHeight="600.0" fitWidth="800.0" pickOnBounds="true">
                <image>
-                  <Image url="@../../StarWarsPicture.jpg" />
+                  <Image url="@../../Pictures/StarWarsPicture.jpg" />
                </image>
             </ImageView>
             <ImageView fx:id="marvelQA" fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" visible="false">
                <image>
-                  <Image url="@../../MarvelPicture.jpg" />
+                  <Image url="@../../Pictures/MarvelPicture.jpg" />
                </image>
             </ImageView>
             <ImageView fx:id="moviesQA" fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" visible="false">
                <image>
-                  <Image url="@../../MoviePicture.jpg" />
+                  <Image url="@../../Pictures/MoviePicture.jpg" />
                </image>
             </ImageView>
             <ImageView fx:id="parksQA" fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" visible="false">
                <image>
-                  <Image url="@../../ParkPicture.jpg" />
+                  <Image url="@../../Pictures/ParkPicture.jpg" />
                </image>
             </ImageView>
             <ImageView fx:id="songsQA" fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" visible="false">
                <image>
-                  <Image url="@../../MusicPicture.jpg" />
+                  <Image url="@../../Pictures/MusicPicture.jpg" />
                </image>
             </ImageView>
             <Pane layoutX="15.0" layoutY="14.0" prefHeight="60.0" prefWidth="772.0" style="-fx-background-color: white;" />

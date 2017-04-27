@@ -233,7 +233,7 @@ public class ViewController {
 	}
 	
 	public boolean checkFile(String userName, int i){
-		f = new File("users/" + userName.toLowerCase());
+		f = new File("Users/" + userName.toLowerCase());
 		if(f.exists() && !f.isDirectory()) { 
 			userControl = new UserController(f);
 			if(i == 1){
