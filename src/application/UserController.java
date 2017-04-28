@@ -104,7 +104,7 @@ public class UserController {
 					+ "\nSongsScore: "
 					+ viewControl.getScore("Songs").get(0) + "/" + viewControl.getScore("Songs").get(1)
 					+ "\nStarWarsScore: "
-					+ viewControl.getScore("StarWars").get(0) + "/" + viewControl.getScore("StarWars").get(1));
+					+ viewControl.getScore("Star Wars").get(0) + "/" + viewControl.getScore("Star Wars").get(1));
 			} 
 		catch (IOException e) {
 			e.printStackTrace();

@@ -164,6 +164,13 @@
                         <Font size="22.0" />
                      </font>
                   </Text>
+                  <Pane fx:id="savePane" prefHeight="134.0" prefWidth="289.0" style="-fx-background-color: white; -fx-border-color: #4c4c4c; -fx-border-width: .5;" visible="false">
+                     <children>
+                        <Text layoutX="52.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Save before logging out?" />
+                        <Button fx:id="yesButton" layoutX="75.0" layoutY="67.0" mnemonicParsing="false" onMouseClicked="#yesClick" text="Yes" />
+                        <Button fx:id="noButton" layoutX="152.0" layoutY="67.0" mnemonicParsing="false" onMouseClicked="#noClick" text="No" />
+                     </children>
+                  </Pane>
                </children>
             </Pane>
          </children>
@@ -291,7 +298,7 @@
                   <Font size="28.0" />
                </font>
             </Text>
-            <Text fx:id="QAScore" layoutX="670.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="  Score:" wrappingWidth="117.0">
+            <Text fx:id="QAScore" layoutX="670.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="  Score:  0/0" wrappingWidth="117.0">
                <font>
                   <Font size="17.0" />
                </font>

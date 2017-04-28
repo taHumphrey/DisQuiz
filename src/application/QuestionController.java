@@ -31,8 +31,6 @@ public class QuestionController {
 			return qaMap.get(j).get(0);
 		}
 		catch(IndexOutOfBoundsException e){
-			control = new ViewController();
-			control.setDone();
 			return "Done";
 		}
 		
