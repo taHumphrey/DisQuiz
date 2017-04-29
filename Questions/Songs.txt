@@ -58,9 +58,3 @@ swim
 bell
 "They can sing, they can dance. After all, Miss, this is France, and a dinner here is never ______ ____ ."
 second best
-\ No newline at end of file
-What is the name of Boba Fett's ship?
-Salve I
-What year did A New Hope release?
-Who was the original commander of the 
-\ No newline at end of file

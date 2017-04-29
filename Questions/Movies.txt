@@ -1,6 +1,6 @@
 In the movie "Tangled," Flynn Rider is wanted dead or alive according to his wanted poster because he's a...
 thief
-In "Sleeping Beauty," what is the name of Maleficent�s pet raven?
+In "Sleeping Beauty," what is the name of Maleficentâ€™s pet raven?
 Diablo
 In "The Lion King," what side of Scar's face is his scar on?
 left
@@ -12,15 +12,15 @@ What is the name of the organization Bernard and Miss Bianca work in "The Rescue
 The Rescue Aid Society
 In "Princess and the Frog," what fictional country is Prince Naveen from?
 Maldonia
-On whose shoulders does Dopey stand on in order to dance with Snow White during �The Silly Song� scene?
+On whose shoulders does Dopey stand on in order to dance with Snow White during â€œThe Silly Songâ€ scene?
 Sneezy
 In "Peter Pan," what hand did Captain Hook lose to the crocodile?
 left
 How many years does the Genie say he has been trapped in the lamp?
 10,000
-In "The Sword in the Stone," what is the name of Merlin�s pet owl?
+In "The Sword in the Stone," what is the name of Merlinâ€™s pet owl?
 Archimedes
-In "Lady and the Tramp," Jim Dear gives his wife Darling, Lady as a gift for�
+In "Lady and the Tramp," Jim Dear gives his wife Darling, Lady as a gift forâ€¦
 Christmas
 In "The Little Mermaid," what alias does Ursula use when she becomes human?
 Vanessa
@@ -66,9 +66,3 @@ In Pinocchio, what does Jiminy Cricket use for his bed in Gepetto's Workshop?
 matchbox
 Which one of the mice does Cinderella save from the mousetrap?
 Gus
-\ No newline at end of file
-What is the name of Boba Fett's ship?
-Salve I
-What year did A New Hope release?
-Who was the original commander of the 
-\ No newline at end of file

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
@@ -10,9 +11,68 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ViewController">
    <children>
+      <Pane fx:id="startScreen" layoutX="315.0" layoutY="200.0" prefHeight="600.0" prefWidth="800.0" scaleShape="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../Pictures/StartPicture.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="newUserButton" layoutX="47.0" layoutY="249.0" mnemonicParsing="false" onMouseClicked="#openNewLogin" text="New User">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Button>
+            <Button fx:id="loginButton" layoutX="46.0" layoutY="171.0" mnemonicParsing="false" onMouseClicked="#openLogin" text="    Login   ">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Button>
+            <Pane fx:id="createPanel" layoutX="277.0" layoutY="160.0" prefHeight="225.0" prefWidth="246.0" style="-fx-background-color: white; -fx-border-color: #4c4c4c; -fx-border-width: 1.5;" visible="false">
+               <children>
+                  <TextField fx:id="createField" layoutX="23.0" layoutY="94.0" promptText="Create New User">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="createSubmit" layoutX="155.0" layoutY="142.0" mnemonicParsing="false" onMouseClicked="#categoryOpen" text="Submit">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Text layoutX="64.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create User">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="createExitButton" layoutX="220.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#createExit" prefHeight="25.0" prefWidth="11.0" text="X" />
+               </children>
+            </Pane>
+            <Pane fx:id="loginPanel" layoutX="277.0" layoutY="160.0" prefHeight="225.0" prefWidth="246.0" style="-fx-background-color: white; -fx-border-color: #4c4c4c; -fx-border-width: 1.5;" visible="false">
+               <children>
+                  <TextField fx:id="loginField" layoutX="23.0" layoutY="94.0" promptText="Existing Username">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="loginSubmit" layoutX="155.0" layoutY="142.0" mnemonicParsing="false" onMouseClicked="#categoryOpen" text="Submit">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Text layoutX="46.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome Back!">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="loginExitButton" layoutX="220.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#loginExit" prefHeight="25.0" prefWidth="11.0" text="X" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
       <Pane fx:id="categoryScreen" layoutX="300.0" layoutY="200.0" prefHeight="600.0" prefWidth="800.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ImageView fitHeight="600.0" fitWidth="806.0" layoutX="-3.0" pickOnBounds="true">
+            <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true">
                <image>
                   <Image url="@../../Pictures/CategoryPicture.jpg" />
                </image>
@@ -138,7 +198,10 @@
             </Button>
             <Pane fx:id="settingPanel" layoutX="256.0" layoutY="167.0" prefHeight="134.0" prefWidth="289.0" style="-fx-background-color: white; -fx-border-color: #4c4c4c; -fx-border-width: .5;" visible="false">
                <children>
-                  <Button fx:id="settingExitButton" layoutX="260.0" layoutY="6.0" mnemonicParsing="false" onMouseClicked="#settingExit" prefHeight="25.0" prefWidth="11.0" text="X" />
+                  <Button fx:id="settingExitButton" layoutX="250.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#settingExit" prefHeight="25.0" prefWidth="11.0" text="X">
+                     <font>
+                        <Font size="19.0" />
+                     </font></Button>
                   <Button fx:id="resetDataButton" layoutX="14.0" layoutY="80.0" mnemonicParsing="false" onMouseClicked="#resetData" text="Reset Data">
                      <font>
                         <Font size="13.0" />
@@ -159,70 +222,32 @@
                         <Font size="13.0" />
                      </font>
                   </Button>
-                  <Text layoutX="105.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings">
+                  <Text layoutX="105.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Text>
-               </children>
-            </Pane>
-         </children>
-      </Pane>
-      <Pane fx:id="startScreen" layoutX="315.0" layoutY="200.0" prefHeight="600.0" prefWidth="800.0" scaleShape="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true">
-               <image>
-                  <Image url="@../../Pictures/StartPicture.png" />
-               </image>
-            </ImageView>
-            <Button fx:id="newUserButton" layoutX="68.0" layoutY="272.0" mnemonicParsing="false" onMouseClicked="#openNewLogin" text="New User">
-               <font>
-                  <Font size="26.0" />
-               </font>
-            </Button>
-            <Button fx:id="loginButton" layoutX="66.0" layoutY="196.0" mnemonicParsing="false" onMouseClicked="#openLogin" text="    Login   ">
-               <font>
-                  <Font size="26.0" />
-               </font>
-            </Button>
-            <Pane fx:id="createPanel" layoutX="277.0" layoutY="160.0" prefHeight="225.0" prefWidth="246.0" style="-fx-background-color: white; -fx-border-color: #4c4c4c; -fx-border-width: 1.5;" visible="false">
-               <children>
-                  <TextField fx:id="createField" layoutX="23.0" layoutY="94.0" promptText="Create New User">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </TextField>
-                  <Button fx:id="createSubmit" layoutX="155.0" layoutY="142.0" mnemonicParsing="false" onMouseClicked="#categoryOpen" text="Submit">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Button>
-                  <Text layoutX="64.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create User">
-                     <font>
-                        <Font size="23.0" />
-                     </font>
-                  </Text>
-                  <Button fx:id="createExitButton" layoutX="220.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#createExit" prefHeight="25.0" prefWidth="11.0" text="X" />
-               </children>
-            </Pane>
-            <Pane fx:id="loginPanel" layoutX="277.0" layoutY="160.0" prefHeight="225.0" prefWidth="246.0" style="-fx-background-color: white; -fx-border-color: #4c4c4c; -fx-border-width: 1.5;" visible="false">
-               <children>
-                  <TextField fx:id="loginField" layoutX="23.0" layoutY="94.0" promptText="Existing Username">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </TextField>
-                  <Button fx:id="loginSubmit" layoutX="155.0" layoutY="142.0" mnemonicParsing="false" onMouseClicked="#categoryOpen" text="Submit">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Button>
-                  <Text layoutX="46.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome Back!">
-                     <font>
-                        <Font size="23.0" />
-                     </font>
-                  </Text>
-                  <Button fx:id="loginExitButton" layoutX="220.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#loginExit" prefHeight="25.0" prefWidth="11.0" text="X" />
+                  <Pane fx:id="savePane" prefHeight="134.0" prefWidth="289.0" style="-fx-background-color: white; -fx-border-color: #4c4c4c; -fx-border-width: .5;" visible="false">
+                     <children>
+                        <Text layoutX="39.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Save before logging out?">
+                           <font>
+                              <Font size="19.0" />
+                           </font></Text>
+                        <Button fx:id="yesButton" layoutX="75.0" layoutY="75.0" mnemonicParsing="false" onMouseClicked="#yesClick" text="Yes">
+                           <font>
+                              <Font size="19.0" />
+                           </font></Button>
+                        <Button fx:id="noButton" layoutX="152.0" layoutY="75.0" mnemonicParsing="false" onMouseClicked="#noClick" text="No">
+                           <font>
+                              <Font size="19.0" />
+                           </font></Button>
+                        <Button fx:id="logoutExitButton" layoutX="250.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#logoutExit" prefHeight="25.0" prefWidth="11.0" text="X">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </Pane>
                </children>
             </Pane>
          </children>
@@ -230,7 +255,7 @@
       <Pane fx:id="darkTransparent" opacity="0.5" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: black;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <Pane fx:id="errorPanel" layoutX="271.0" layoutY="146.0" prefHeight="154.0" prefWidth="259.0" style="-fx-background-color: white; -fx-border-color: #c1c1c1; -fx-border-width: .5;" visible="false">
          <children>
-            <Text fx:id="errorMessage" layoutX="7.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="lkjsdf" textAlignment="CENTER" wrappingWidth="246.0">
+            <Text fx:id="errorMessage" layoutX="7.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="246.0">
                <font>
                   <Font size="14.0" />
                </font>
@@ -265,11 +290,11 @@
                   <Image url="@../../Pictures/MusicPicture.jpg" />
                </image>
             </ImageView>
-            <Pane layoutX="15.0" layoutY="14.0" prefHeight="60.0" prefWidth="772.0" style="-fx-background-color: white;" />
-            <Pane layoutX="669.0" layoutY="87.0" prefHeight="58.0" prefWidth="117.0" style="-fx-background-color: white;" />
-            <Pane layoutX="12.0" layoutY="160.0" prefHeight="134.0" prefWidth="772.0" style="-fx-background-color: white;">
+            <Pane layoutX="15.0" layoutY="14.0" opacity="0.75" prefHeight="60.0" prefWidth="772.0" style="-fx-background-color: white;" />
+            <Pane layoutX="669.0" layoutY="87.0" opacity="0.75" prefHeight="58.0" prefWidth="117.0" style="-fx-background-color: white;" />
+            <Pane layoutX="12.0" layoutY="160.0" opacity="0.75" prefHeight="134.0" prefWidth="772.0" style="-fx-background-color: white;">
                <children>
-                  <Text fx:id="QAQuestion" layoutX="5.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Starting" textAlignment="CENTER" wrappingWidth="765.0">
+                  <Text fx:id="QAQuestion" layoutX="5.0" layoutY="63.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Starting" textAlignment="CENTER" wrappingWidth="765.0">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -291,7 +316,7 @@
                   <Font size="28.0" />
                </font>
             </Text>
-            <Text fx:id="QAScore" layoutX="670.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="  Score:" wrappingWidth="117.0">
+            <Text fx:id="QAScore" layoutX="670.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="  Score:  0/0" wrappingWidth="117.0">
                <font>
                   <Font size="17.0" />
                </font>
@@ -299,6 +324,30 @@
             <Button fx:id="doneButton" layoutX="360.0" layoutY="461.0" mnemonicParsing="false" onMouseClicked="#quizDone" text="Done" visible="false">
                <font>
                   <Font size="20.0" />
+               </font>
+            </Button>
+            <Pane fx:id="quitPane" layoutX="197.0" layoutY="245.0" prefHeight="216.0" prefWidth="402.0" style="-fx-background-color: white; -fx-border-color: #4c4c4c; -fx-border-width: .5;" visible="false">
+               <children>
+                  <Text layoutX="51.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Are you sure you want to quit? Progress will not be saved." textAlignment="CENTER" wrappingWidth="300.0">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="yesQuitButton" layoutX="129.0" layoutY="123.0" mnemonicParsing="false" onMouseClicked="#yesQuitClick" text="Yes">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="noQuitButton1" layoutX="214.0" layoutY="123.0" mnemonicParsing="false" onMouseClicked="#noQuitClick" text="No">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Button layoutX="728.0" layoutY="547.0" mnemonicParsing="false" onMouseClicked="#quitQuiz" text="Quit">
+               <font>
+                  <Font size="19.0" />
                </font>
             </Button>
          </children>

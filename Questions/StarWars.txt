@@ -64,4 +64,3 @@ Who played Darth Vader on the set of the movie?
 David Prowse
 Who voiced Darth Vader?
 James Earl Jones
-\ No newline at end of file
