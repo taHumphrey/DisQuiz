@@ -25,11 +25,12 @@ public class ViewController {
 	String choice;
 	String question;
 	String score;
+	ArrayList<String> empty = new ArrayList<String>(Arrays.asList("0", "0"));
 	ArrayList<String> StarWarsScore = new ArrayList<String>(Arrays.asList("0", "0"));
 	ArrayList<String> MarvelScore = new ArrayList<String>(Arrays.asList("0", "0"));
-	ArrayList<String> MoviesScore = new ArrayList<String>(Arrays.asList("0", "0"));
-	ArrayList<String> ParksScore = new ArrayList<String>(Arrays.asList("0", "0"));
-	ArrayList<String> SongsScore = new ArrayList<String>(Arrays.asList("0", "0"));
+	ArrayList<String> ParksScore  = new ArrayList<String>(Arrays.asList("0", "0"));
+	ArrayList<String> SongsScore  = new ArrayList<String>(Arrays.asList("0", "0"));
+	ArrayList<String> MoviesScore  = new ArrayList<String>(Arrays.asList("0", "0"));
 	
 	@FXML
 	Pane startScreen;
@@ -74,10 +75,6 @@ public class ViewController {
 	@FXML
 	Pane savePane;
 	@FXML
-	Button yesButton;
-	@FXML
-	Button noButton;
-	@FXML
 	Button logoutButton;
 	
 	@FXML
@@ -121,6 +118,8 @@ public class ViewController {
 	TextField QAAnswerField;
 	@FXML
 	Text QAScore;
+	@FXML
+	Pane quitPane;
 	@FXML
 	Button submitButton;
 	@FXML
@@ -206,7 +205,21 @@ public class ViewController {
 	}
 	
 	public void resetData(){
-		
+		marvelScore.setText("0/0");
+		MarvelScore.set(0, "0");
+		MarvelScore.set(1, "0");
+		moviesScore.setText("0/0");
+		MoviesScore.set(0, "0");
+		MoviesScore.set(1, "0");
+		parksScore.setText("0/0");
+		ParksScore.set(0, "0");
+		ParksScore.set(1, "0");
+		songsScore.setText("0/0");
+		SongsScore.set(0, "0");
+		SongsScore.set(1, "0");
+		starwarsScore.setText("0/0");
+		StarWarsScore.set(0, "0");
+		StarWarsScore.set(1, "0");
 	}
 	
 	@FXML
@@ -215,8 +228,14 @@ public class ViewController {
 	}
 	
 	@FXML
+	public void logoutExit(){
+		savePane.setVisible(false);
+	}
+	
+	@FXML
 	public void noClick(){
 		currentUser = "";
+		savePane.setVisible(false);
 		settingPanel.setVisible(false);
 		categoryPanel.setVisible(true);
 		categoryScreen.setVisible(false);
@@ -225,6 +244,12 @@ public class ViewController {
 	@FXML
 	public void yesClick(){
 		saveData();
+		currentUser = "";
+		savePane.setVisible(false);
+		settingPanel.setVisible(false);
+		categoryPanel.setVisible(true);
+		categoryScreen.setVisible(false);
+		startScreen.setVisible(true);
 	}
 	
 	@FXML
@@ -241,10 +266,20 @@ public class ViewController {
 	
 	public void setScoreField(HashMap<Integer, ArrayList<String>> scoreMap){
 			marvelScore.setText(scoreMap.get("Marvel".hashCode()).get(0) + "/" + scoreMap.get("Marvel".hashCode()).get(1));
+			MarvelScore.set(0, scoreMap.get("Marvel".hashCode()).get(0));
+			MarvelScore.set(1, scoreMap.get("Marvel".hashCode()).get(1));
 			moviesScore.setText(scoreMap.get("Movies".hashCode()).get(0) + "/" + scoreMap.get("Movies".hashCode()).get(1));
+			MoviesScore.set(0, scoreMap.get("Movies".hashCode()).get(0));
+			MoviesScore.set(1, scoreMap.get("Movies".hashCode()).get(1));
 			parksScore.setText(scoreMap.get("Parks".hashCode()).get(0) + "/" + scoreMap.get("Parks".hashCode()).get(1));
+			ParksScore.set(0, scoreMap.get("Parks".hashCode()).get(0));
+			ParksScore.set(1, scoreMap.get("Parks".hashCode()).get(1));
 			songsScore.setText(scoreMap.get("Songs".hashCode()).get(0) + "/" + scoreMap.get("Songs".hashCode()).get(1));
+			SongsScore.set(0, scoreMap.get("Songs".hashCode()).get(0));
+			SongsScore.set(1, scoreMap.get("Songs".hashCode()).get(1));
 			starwarsScore.setText(scoreMap.get("StarWars".hashCode()).get(0) + "/" + scoreMap.get("StarWars".hashCode()).get(1));
+			StarWarsScore.set(0, scoreMap.get("StarWars".hashCode()).get(0));
+			StarWarsScore.set(1, scoreMap.get("StarWars".hashCode()).get(1));
 	}
 	
 	public boolean checkFile(String userName, int i){
@@ -262,11 +297,38 @@ public class ViewController {
 	}
 	
 	@FXML
+	public void quitQuiz(){
+		quitPane.setVisible(true);
+	}
+	
+	@FXML
+	public void yesQuitClick(){
+		categoryScreen.setVisible(true);
+		categoryPanel.setVisible(true);
+		QAPane.setVisible(false);
+		quitPane.setVisible(false);
+		top = 0;
+		bottom = 0;
+		x = 0;
+	}
+	
+	@FXML
+	public void noQuitClick(){
+		quitPane.setVisible(false);
+	}
+	
+	@FXML
 	public void saveData(){
-		userControl = new UserController(currentUser);
+		userControl = new UserController(StarWarsScore, MarvelScore, 
+				MoviesScore, ParksScore, SongsScore, currentUser);
 	}
 	
 	public void resetQuiz(){
+		starWarsQA.setVisible(false);
+		marvelQA.setVisible(false);
+		parksQA.setVisible(false);
+		songsQA.setVisible(false);
+		moviesQA.setVisible(false);
 		doneButton.setVisible(false);
 		submitButton.setVisible(true);
 		QAAnswerField.clear();
@@ -381,14 +443,29 @@ public class ViewController {
 	public ArrayList<String> getScore(String choice){
 		switch (choice){
 		case "Star Wars":
+			if(StarWarsScore == null){
+				return empty;
+			}
 			return StarWarsScore;
 		case "Movies":
+			if(MoviesScore == null){
+				return empty;
+			}
 			return MoviesScore;
 		case "Parks":
+			if(ParksScore == null){
+				return empty;
+			}
 			return ParksScore;
 		case "Marvel":
+			if(MarvelScore == null){
+				return empty;
+			}
 			return MarvelScore;
 		case "Songs":
+			if(SongsScore == null){
+				return empty;
+			}
 			return SongsScore;
 		default:
 			return null;

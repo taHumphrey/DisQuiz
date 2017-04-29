@@ -13,8 +13,9 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			AnchorPane root = (AnchorPane) FXMLLoader.load(Main.class.getResource("/application/View.fxml"));
-			Scene scene = new Scene(root, 800, 600);
+			Scene scene = new Scene(root, 786, 586);
 			primaryStage.setScene(scene);
+			primaryStage.setResizable(false);
 			primaryStage.show();
 			
 			

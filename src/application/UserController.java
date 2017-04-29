@@ -18,10 +18,27 @@ public class UserController {
 	FileWriter fw;
 	String[] parts;
 	String[] scoreParts;
-	String userName;
+	String userName = "";
 	HashMap<Integer, ArrayList<String>> scoreMap = new HashMap<Integer, ArrayList<String>>();
+	ArrayList<String> StarWarsScore;
+	ArrayList<String> MarvelScore;
+	ArrayList<String> MoviesScore;
+	ArrayList<String> ParksScore;
+	ArrayList<String> SongsScore;
 	
-	public UserController(String user){
+	
+	
+	public UserController(ArrayList<String> StarWarsScore, 
+			ArrayList<String> MarvelScore,
+			ArrayList<String> MoviesScore,
+			ArrayList<String> ParksScore,
+			ArrayList<String> SongsScore, String user){
+		
+		this.StarWarsScore = StarWarsScore;
+		this.MarvelScore = MarvelScore;
+		this.MoviesScore = MoviesScore;
+		this.ParksScore = ParksScore;
+		this.SongsScore = SongsScore;
 		saveUser(user);
 
 	}
@@ -58,7 +75,6 @@ public class UserController {
 		parts = line.split(" ");
 		if(parts[0].hashCode() == "User:".hashCode()){
 			userName = parts[1];
-			System.out.println(userName);
 		}
 		if(parts[0].hashCode() == "MarvelScore:".hashCode()){
 			scoreParts = parts[1].split("/");
@@ -96,15 +112,15 @@ public class UserController {
 			bw = new BufferedWriter(fw);
 			bw.write("User: " + user 
 					+ "\nMarvelScore: " 
-					+ viewControl.getScore("Marvel").get(0) + "/" + viewControl.getScore("Marvel").get(1)
+					+ MarvelScore.get(0) + "/" + MarvelScore.get(1)
 					+ "\nMoviesScore: " 
-					+ viewControl.getScore("Movies").get(0) + "/" + viewControl.getScore("Movies").get(1)
+					+ MoviesScore.get(0) + "/" + MoviesScore.get(1)
 					+ "\nParksScore: "
-					+ viewControl.getScore("Parks").get(0) + "/" + viewControl.getScore("Parks").get(1)
+					+ ParksScore.get(0) + "/" + ParksScore.get(1)
 					+ "\nSongsScore: "
-					+ viewControl.getScore("Songs").get(0) + "/" + viewControl.getScore("Songs").get(1)
+					+ SongsScore.get(0) + "/" + SongsScore.get(1)
 					+ "\nStarWarsScore: "
-					+ viewControl.getScore("Star Wars").get(0) + "/" + viewControl.getScore("Star Wars").get(1));
+					+ StarWarsScore.get(0) + "/" + StarWarsScore.get(1));
 			} 
 		catch (IOException e) {
 			e.printStackTrace();
