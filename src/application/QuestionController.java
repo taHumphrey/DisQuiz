@@ -9,7 +9,7 @@ public class QuestionController {
 	QuestionParsing qaParse;
 	HashMap<Integer, ArrayList<String>> qaMap;
 	Random rand = new Random();
-	ViewController control;
+	ViewController control = new ViewController();
 	ArrayList<Integer> keyNum = new ArrayList<Integer>();
 	int j;
 	public QuestionController(String choice){
