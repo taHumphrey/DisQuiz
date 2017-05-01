@@ -35,7 +35,7 @@ public class QuestionParsing {
 	
 	public void loadFile(String choice){
 		try {
-			fr = new FileReader(new File("questions/" + choice + ".txt").getAbsolutePath());
+			fr = new FileReader(new File("src/Resources/" + choice + ".txt").getAbsolutePath());
 			br = new BufferedReader(fr);
 
 			String sCurrentLine;

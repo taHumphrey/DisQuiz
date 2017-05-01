@@ -108,7 +108,7 @@ public class UserController {
 	
 	public void saveUser(String user){
 		try {
-			fw = new FileWriter(new File("Users/" + user.toLowerCase()).getAbsolutePath());
+			fw = new FileWriter(new File("src/Resources/" + user.toLowerCase()).getAbsolutePath());
 			bw = new BufferedWriter(fw);
 			bw.write("User: " + user 
 					+ "\nMarvelScore: " 
